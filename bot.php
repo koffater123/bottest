@@ -1,7 +1,7 @@
 <?php
  include('simple_html_dom.php');
  $html = file_get_html('http://tts.railway.co.th/srttts/view');
- foreach($html->find('table tr td') as $e){
+ foreach($html->find('table tr td font') as $e){
     $arr[] = trim($e->innertext);
   }
 /*
@@ -24,7 +24,7 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
 			//$text = $event['message']['text'];
-			$text = $arr[14].=$arr[15].=$arr[16].=$arr[17].=$arr[18];
+			$text = $arr[12];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
