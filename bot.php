@@ -24,7 +24,7 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
 			//$text = $event['message']['text'];
-			$text = $arr[12].=$arr[13];
+			$text = $arr[12].=$arr[13].=$arr[14].=$arr[15].=$arr[16].=$arr[17].=$arr[18];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
