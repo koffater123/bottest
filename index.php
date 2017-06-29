@@ -4,15 +4,12 @@
  foreach($html->find('table tr td') as $e){
     $arr[] = trim($e->innertext);
   }
+/*
   for ($i=12;$i<sizeof($arr)-9;$i+=9)
   {
 	  print_r($arr[$i]);
 	  echo "\r\n";
-  }
-  print_r($arr[12]);
-  print_r($arr[13]);
-  print_r($arr[14]);
-  print_r($arr[15]);
+  }*/
 //print_r($arr);
 $access_token = 'EZhc3qkbHr8CzNimKi8y3eZbY+C897upwPu/0Np+4I1XhliJCxBVY9oCjPgAB9SXA69lnCGL/O7Qw+81fWTeJJyeQShqZDNXBjFU1VGPJ0XeIGXVS7DFD197JIBBcyUzfMuVj5gjKqm2F2amX+mj/AdB04t89/1O/w1cDnyilFU=';
 // Get POST body content
