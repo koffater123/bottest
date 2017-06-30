@@ -30,7 +30,7 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
 			//$text = $event['message']['text'];
-			$text = "ขบวนหมายเลข  ".$arr[12].\n."วันที่ออกต้นทาง ".$arr[13]."เวลาออกต้นทาง ".$arr[14];
+			$text = "ขบวนหมายเลข  ".$arr[12]."วันที่ออกต้นทาง ".$arr[13]."เวลาออกต้นทาง ".$arr[14]."สถานีต้นทาง-ปลายทาง".$arr[15]."เวลาถึงปลายทาง".$arr[16]."ถึงสถานี".$arr[17]."เวลาถึง".$arr[18]."เวลาออก".$arr[19]."ช้า(นาที)".$arr[20];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
