@@ -64,7 +64,7 @@ if (!is_null($events['events'])) {
 			 		}
   			}
 			if ($foundcar==1) {
-				$text = "\nขบวนหมายเลข  ".$arr[$numcar]."\nวันที่ออกต้นทาง ".$arr[$numcar+1]."\nเวลาออกต้นทาง ".$arr[$numcar+2]."\nสถานีต้นทาง-ปลายทาง ".$arr[$numcar+3]."\nเวลาถึงปลายทาง ".$arr[$numcar+4]."\nปัจจุบันถึงสถานี ".$arr[$numcar+5]."\nเวลาถึง ".$arr[$numcar+6]."\nเวลาออก ".$arr[$numcar+7]."\nช้า(นาที) ".$arr[$numcar+8];
+				$text = "\nขบวนหมายเลข  ".$arr[$numcar]."\nวันที่ออกต้นทาง ".$arr[$numcar+1]."\nเวลาออกต้นทาง ".$arr[$numcar+2]."\nสถานีต้นทาง-ปลายทาง ".$arr[$numcar+3]."\nเวลาถึงปลายทาง ".$arr[$numcar+4]."\nปัจจุบันถึงสถานี ".$arr[$numcar+5]."\nเวลาถึง ".$arr[$numcar+6]."\nเวลาออก ".$arr[$numcar+7]."\nช้า(นาที) ".$arr[$numcar+8]."\n";
 			}
   			else if ($foundcar==0) $text = "ไม่พบขบวนรถ";
 			// Get replyToken
