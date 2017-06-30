@@ -13,20 +13,31 @@
   foreach($html->find('font[color="red"],font[color="green"]') as $e){
     $late[] = trim($e->innertext);
   }
-  //$car=102;
+  foreach($html->find('font[color="#424242"]') as $e){
+    $incom[] = trim($e->innertext);
+  }
+  foreach($html->find('font[color="#757575"]') as $e){
+    $outgoing[] = trim($e->innertext);
+  }
   $numcar=0;
   $foundcar=0;
   $i2=0;
   $i3=0;
   $i4=0;
+  $i5=0;
+  $i6=0;
   for ($i=12;$i<sizeof($arr)-9;$i+=9)
   {
 	  $arr[$i] = $number[$i2];
 	  $arr[$i+5] = substr($now[$i3],27,-3);
+	  $arr[$i+6] = $incom[$i4];
+	  $arr[$i+7] = $outgoing[$i5];
 	  $arr[$i+8] = substr($late[$i4],0,-36);
 	  if ($i2<sizeof($number)-1) $i2++;
 	  if ($i3<sizeof($now)-1) $i3++;
-	  if ($i4<sizeof($late)-1) $i4++;
+	  if ($i4<sizeof($incom)-1) $i4++;
+	  if ($i5<sizeof($outgoing)-1) $i5++;
+	  if ($i6<sizeof($late)-1) $i6++;
   }
 
 $access_token = 'EZhc3qkbHr8CzNimKi8y3eZbY+C897upwPu/0Np+4I1XhliJCxBVY9oCjPgAB9SXA69lnCGL/O7Qw+81fWTeJJyeQShqZDNXBjFU1VGPJ0XeIGXVS7DFD197JIBBcyUzfMuVj5gjKqm2F2amX+mj/AdB04t89/1O/w1cDnyilFU=';
