@@ -1,16 +1,22 @@
 <?php
+	$i2;
  include('simple_html_dom.php');
  $html = file_get_html('http://tts.railway.co.th/srttts/view');
- foreach($html->find('table tr td font') as $e){
+ foreach($html->find('table tr td') as $e){
     $arr[] = trim($e->innertext);
   }
-/*
+  foreach($html->find('font[color="blue"]') as $e){
+    $number[] = trim($e->innertext);
+  }
+  $i2=0;
   for ($i=12;$i<sizeof($arr)-9;$i+=9)
   {
-	  print_r($arr[$i]);
-	  echo "\r\n";
-  }*/
-//print_r($arr);
+	  $arr[$i] = $number[$i2];
+	  //print_r($arr[$i]);
+	  if ($i2<sizeof($number)-1) $i2++;
+	  //echo "\r\n";
+  }
+
 $access_token = 'EZhc3qkbHr8CzNimKi8y3eZbY+C897upwPu/0Np+4I1XhliJCxBVY9oCjPgAB9SXA69lnCGL/O7Qw+81fWTeJJyeQShqZDNXBjFU1VGPJ0XeIGXVS7DFD197JIBBcyUzfMuVj5gjKqm2F2amX+mj/AdB04t89/1O/w1cDnyilFU=';
 // Get POST body content
 $content = file_get_contents('php://input');
