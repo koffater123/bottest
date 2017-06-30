@@ -19,8 +19,7 @@
   for ($i=12;$i<sizeof($arr)-9;$i+=9)
   {
 	  $arr[$i] = $number[$i2];
-	  $arr[$i+5] = substr($now[$i3],27);
-	  $arr[$i+5] = substr($arr[$i+5],-3);
+	  $arr[$i+5] = substr($now[$i3],27,-3);
 	  $arr[$i+8] = $late[$i4];
 	  //print_r($arr[$i]);
 	  if ($i2<sizeof($number)-1) $i2++;
