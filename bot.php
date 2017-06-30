@@ -13,7 +13,7 @@
   foreach($html->find('font[color="red"],font[color="green"]') as $e){
     $late[] = trim($e->innertext);
   }
-  $car=102;
+  //$car=102;
   $numcar=0;
   $foundcar=0;
   $i2=0;
@@ -27,15 +27,6 @@
 	  if ($i2<sizeof($number)-1) $i2++;
 	  if ($i3<sizeof($now)-1) $i3++;
 	  if ($i4<sizeof($late)-1) $i4++;
-  }
- for ($i=12;$i<sizeof($arr)-9;$i+=9)
-  {
-	 if ($arr[$i]==$car)
-	 {
-		 $numcar=$i;
-		 $foundcar =1;
-		 break;
-	 }
   }
 
 $access_token = 'EZhc3qkbHr8CzNimKi8y3eZbY+C897upwPu/0Np+4I1XhliJCxBVY9oCjPgAB9SXA69lnCGL/O7Qw+81fWTeJJyeQShqZDNXBjFU1VGPJ0XeIGXVS7DFD197JIBBcyUzfMuVj5gjKqm2F2amX+mj/AdB04t89/1O/w1cDnyilFU=';
@@ -52,8 +43,17 @@ if (!is_null($events['events'])) {
 			// Get text sent
 			//$text = $event['message']['text'];
 			//$text = "หมายเลขขบวน ".$arr[12]."\nวันที่ออกต้นทาง ".$arr[13]."\nเวลาออกต้นทาง ".$arr[14]."\nสถานีต้นทาง-ปลายทาง ".$arr[15]."\nเวลาถึงปลายทาง ".$arr[16]."\nถึงสถานี ".$arr[17]."\nเวลาถึง ".$arr[18]."\nเวลาออก ".$arr[19]."\nช้า(นาที) ".$arr[20];
+			 for ($i=12;$i<sizeof($arr)-9;$i+=9)
+ 			{
+			 	if ($arr[$i]==$event['message']['text'])
+			 		{
+			 			$numcar=$i;
+			 			$foundcar =1;
+			 			break;
+			 		}
+  			}
 			if ($foundcar==1) {
-				$text = "\nขบวนหมายเลข  ".$arr[$numcar]."\nวันที่ออกต้นทาง ".$arr[$numcar+1]."เวลาออกต้นทาง ".$arr[$numcar+2]."สถานีต้นทาง-ปลายทาง".$arr[$numcar+3]."เวลาถึงปลายทาง".$arr[$numcar+4]."ถึงสถานี".$arr[$numcar+5]."เวลาถึง".$arr[$numcar+6]."เวลาออก".$arr[$numcar+7]."ช้า(นาที)".$arr[$numcar+8];
+				$text = "\nขบวนหมายเลข  ".$arr[$numcar]."\nวันที่ออกต้นทาง ".$arr[$numcar+1]."\nเวลาออกต้นทาง ".$arr[$numcar+2]."\nสถานีต้นทาง-ปลายทาง ".$arr[$numcar+3]."\nเวลาถึงปลายทาง ".$arr[$numcar+4]."\nถึงสถานี ".$arr[$numcar+5]."\nเวลาถึง ".$arr[$numcar+6]."\nเวลาออก ".$arr[$numcar+7]."\nช้า(นาที) ".$arr[$numcar+8];
 			}
   			else if ($foundcar==0) $text = "ไม่พบขบวนรถ";
 			// Get replyToken
