@@ -20,8 +20,8 @@
   {
 	  $arr[$i] = $number[$i2];
 	  $arr[$i+5] = substr($now[$i3],27,-3);
-	  $arr[$i+8] = $late[$i4];
-	  //print_r($arr[$i]);
+	  $arr[$i+8] = substr($late[$i4],0,-36);
+	 
 	  if ($i2<sizeof($number)-1) $i2++;
 	  if ($i3<sizeof($now)-1) $i3++;
 	  if ($i4<sizeof($late)-1) $i4++;
