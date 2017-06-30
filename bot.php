@@ -1,5 +1,4 @@
 <?php
-	$i2;
  include('simple_html_dom.php');
  $html = file_get_html('http://tts.railway.co.th/srttts/view');
  foreach($html->find('table tr td') as $e){
@@ -8,12 +7,24 @@
   foreach($html->find('font[color="blue"]') as $e){
     $number[] = trim($e->innertext);
   }
+  foreach($html->find('font[color="#3d475b"]') as $e){
+    $now[] = trim($e->innertext);
+  }
+  foreach($html->find('font[color="red"],font[color="green"]') as $e){
+    $late[] = trim($e->innertext);
+  }
   $i2=0;
+  $i3=0;
+  $i4=0;
   for ($i=12;$i<sizeof($arr)-9;$i+=9)
   {
 	  $arr[$i] = $number[$i2];
+	  $arr[$i+5] = $now[$i3];
+	  $arr[$i+8] = $late[$i4];
 	  //print_r($arr[$i]);
 	  if ($i2<sizeof($number)-1) $i2++;
+	  if ($i3<sizeof($now)-1) $i3++;
+	  if ($i4<sizeof($late)-1) $i4++;
 	  //echo "\r\n";
   }
 
