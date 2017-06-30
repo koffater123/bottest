@@ -30,7 +30,7 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
 			//$text = $event['message']['text'];
-			$text = "ขบวนหมายเลข  ".$arr[12]." วันที่ออกต้นทาง ".$arr[13]." เวลาออกต้นทาง ".$arr[14];
+			$text = "ขบวนหมายเลข  ".$arr[12]."<br>"."วันที่ออกต้นทาง ".$arr[13]."เวลาออกต้นทาง ".$arr[14];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
@@ -43,6 +43,7 @@ if (!is_null($events['events'])) {
 			$data = [
 				'replyToken' => $replyToken,
 				'messages' => [$messages],
+				
 				
 			];
 			$post = json_encode($data);
